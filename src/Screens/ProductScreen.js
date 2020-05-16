@@ -8,7 +8,6 @@ import StarRatings from "../Components/Star";
 function ProductScreen(props) {
     const { id } = useParams();
     const product = data.products.find(product => product.id === id);
-    console.log(product);
 
     return (
         <div>
@@ -38,6 +37,31 @@ function ProductScreen(props) {
                             <div>
                                 {product.description}
                             </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className="details-action">
+                    <ul>
+                        <li>
+                            Price: {product.price}
+                        </li>
+                        <li>
+                            Status: {product.stock > 0 ? "In Stock" : "Unavailable."}
+                        </li>
+                        <li>
+                            Qty:
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </li>
+                        <li>
+                            {product.stock > 0 &&
+                            <button onClick={() => console.log("agregar al carrito")} className="button primary" >
+                                Add to Cart
+                            </button>}
                         </li>
                     </ul>
                 </div>
