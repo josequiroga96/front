@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
+import './app.css';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route, Link
-} from "react-router-dom";
+    Switch, Route, Link
+} from 'react-router-dom';
 
-import HomeScreen from "./Screens/HomeScreen";
-import ProductScreen from "./Screens/ProductScreen";
+import HomeScreen from '../Screens/HomeScreen';
+import ProductScreen from '../Screens/ProductScreen';
 
 class App extends Component {
 

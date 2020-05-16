@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import data from "../data";
-import {Link} from "react-router-dom";
+
+import './styles/homeScreen.css'
+import data from '../data';
+import {Link} from 'react-router-dom';
 
 class HomeScreen extends Component {
     render() {
@@ -11,7 +13,7 @@ class HomeScreen extends Component {
                         data !== undefined && data.products.map((product, key) => (
                             <li key={key}>
                                 <div className="product">
-                                    <Link to={`/products/${product.id}`}>
+                                    <Link to={'/products/' + product.id}>
                                         <img className="product-image" src={product.image} alt="product"/>
                                     </Link>
                                     <div className="product-name">

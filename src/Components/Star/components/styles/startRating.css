@@ -1,0 +1,17 @@
+.star-ratings {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.star-grad {
+    position: absolute;
+    z-index: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.stop-color {
+    stop-opacity: 1;
+}
