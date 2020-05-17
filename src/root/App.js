@@ -55,12 +55,8 @@ class App extends Component {
                     <main className="main">
                         <div className="content">
                             <Switch>
-                                <Route path="/" exact={true}>
-                                    <HomeScreen />
-                                </Route>
-                                <Route path="/products/:id">
-                                    <ProductScreen />
-                                </Route>
+                                <Route path="/" exact={true} component={(props) => <HomeScreen {...props} />}/>
+                                <Route path="/products/:id" component={(props) => <ProductScreen {...props} />}/>
                             </Switch>
                         </div>
                     </main>

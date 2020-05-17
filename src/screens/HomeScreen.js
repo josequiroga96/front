@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import './styles/homeScreen.css'
 import {Link} from 'react-router-dom';
@@ -16,7 +16,7 @@ function HomeScreen(props) {
         dispatch(listProducts());
 
         return () => {};
-    }, []);
+    }, [dispatch]);
 
     return loading ? <div>Loading...</div> :
         error ? <div>{error}</div> : (
