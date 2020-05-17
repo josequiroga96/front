@@ -28,4 +28,4 @@ function productDetailsReducer(state = { product: {} }, action) {
     }
 }
 
-export { productListReducer, productDetailsReducer }
+export { productListReducer, productDetailsReducer };

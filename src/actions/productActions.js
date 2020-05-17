@@ -24,4 +24,4 @@ const detailsProduct = (productId) => async (dispatch) => {
     }
 };
 
-export { listProducts, detailsProduct }
+export { listProducts, detailsProduct };

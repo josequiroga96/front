@@ -8,6 +8,7 @@ import {
 
 import HomeScreen from '../screens/HomeScreen';
 import ProductScreen from '../screens/ProductScreen';
+import CartScreen from "../screens/CartScreen";
 
 class App extends Component {
 
@@ -57,6 +58,7 @@ class App extends Component {
                             <Switch>
                                 <Route path="/" exact={true} component={(props) => <HomeScreen {...props} />}/>
                                 <Route path="/products/:id" component={(props) => <ProductScreen {...props} />}/>
+                                <Route path="/cart/:id?" component={(props) => <CartScreen {...props} />}/>
                             </Switch>
                         </div>
                     </main>
