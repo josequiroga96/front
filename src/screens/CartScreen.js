@@ -41,7 +41,6 @@ function CartScreen(props) {
                     </li>
                     { cartItems.length === 0 ? <div>Cart is empty</div> :
                         cartItems.map((item, index) => {
-                            console.log(item);
                             return <li key={index}>
                                 <div className="cart-image">
                                     <img src={"/" + item.image} alt="product" />
