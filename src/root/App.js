@@ -6,8 +6,8 @@ import {
     Switch, Route, Link
 } from 'react-router-dom';
 
-import HomeScreen from '../Screens/HomeScreen';
-import ProductScreen from '../Screens/ProductScreen';
+import HomeScreen from '../screens/HomeScreen';
+import ProductScreen from '../screens/ProductScreen';
 
 class App extends Component {
 

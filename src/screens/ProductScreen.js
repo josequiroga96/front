@@ -3,7 +3,7 @@ import React from 'react';
 import './styles/productScreen.css';
 import { useParams, Link } from 'react-router-dom';
 import data from "../data";
-import StarRatings from "../Components/Star";
+import StarRatings from "../components/Star";
 
 function ProductScreen(props) {
     const { id } = useParams();
