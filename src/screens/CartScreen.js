@@ -18,7 +18,7 @@ function CartScreen(props) {
     };
 
     const checkoutHandler = () => {
-        console.log("Comprar")
+        props.history.push("/login?redirect=shipping");
     };
 
     useEffect(() => {

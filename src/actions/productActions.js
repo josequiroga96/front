@@ -27,7 +27,7 @@ const detailsProduct = (productId) => async (dispatch) => {
 const saveProduct = (product) => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.PRODUCT_SAVE_REQUEST, payload: product });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         if (!product.id) {
             const { data } = await axios.post('/api/products/', product, {
                 headers: {
@@ -52,7 +52,7 @@ const saveProduct = (product) => async (dispatch, getState) => {
 
 const deleteProdcut = (productId) => async (dispatch, getState) => {
     try {
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         dispatch({ type: actions.PRODUCT_DELETE_REQUEST, payload: productId });
         const { data } = await axios.delete("/api/products/" + productId, {
             headers: {

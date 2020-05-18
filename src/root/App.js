@@ -12,6 +12,13 @@ import ProductScreen from '../screens/ProductScreen';
 import CartScreen from "../screens/CartScreen";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
+import OrdersScreen from "../screens/OrdersScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import OrderScreen from "../screens/OrderScreen";
+import ProductsScreen from "../screens/ProductsScreen";
+import ShippingScreen from "../screens/ShippingScreen";
+import PaymentScreen from "../screens/PaymentScreen";
+import PlaceOrderScreen from "../screens/PlaceOrderScreen";
 
 function App() {
 
@@ -68,6 +75,13 @@ function App() {
                             <Route path="/cart/:id?" component={(props) => <CartScreen {...props} />}/>
                             <Route path="/login" component={(props) => <LoginScreen {...props} />}/>
                             <Route path="/signup" component={(props) => <SignupScreen {...props} />}/>
+                            <Route path="/orders" component={(props) => <OrdersScreen {...props} />}/>
+                            <Route path="/profile" component={(props) => <ProfileScreen {...props} />}/>
+                            <Route path="/order/:id" component={(props) => <OrderScreen {...props} />}/>
+                            <Route path="/products" component={(props) => <ProductsScreen {...props} />}/>
+                            <Route path="/shipping" component={(props) => <ShippingScreen {...props} />}/>
+                            <Route path="/payment" component={(props) => <PaymentScreen {...props} />}/>
+                            <Route path="/placeorder" component={(props) => <PlaceOrderScreen {...props} />}/>
                         </Switch>
                     </div>
                 </main>

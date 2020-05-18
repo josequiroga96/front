@@ -4,7 +4,7 @@ import * as actions from '../constants/orderConstants'
 const createOrder = (order) => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.ORDER_CREATE_REQUEST, payload: order });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data: { data: newOrder } } = await axios.post("/api/orders", order, {
             headers: {
                 Authorization: userInfo.token
@@ -19,7 +19,7 @@ const createOrder = (order) => async (dispatch, getState) => {
 const listMyOrders = () => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.MY_ORDER_LIST_REQUEST });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data } = await axios.get("/api/orders/mine", {
             headers:
                 { Authorization: userInfo.token }
@@ -34,7 +34,7 @@ const listOrders = () => async (dispatch, getState) => {
 
     try {
         dispatch({ type: actions.ORDER_LIST_REQUEST });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data } = await axios.get("/api/orders", {
             headers:
                 { Authorization: userInfo.token }
@@ -48,7 +48,7 @@ const listOrders = () => async (dispatch, getState) => {
 const detailsOrder = (orderId) => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.ORDER_DETAILS_REQUEST, payload: orderId });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data } = await axios.get("/api/orders/" + orderId, {
             headers:
                 { Authorization: userInfo.token }
@@ -62,7 +62,7 @@ const detailsOrder = (orderId) => async (dispatch, getState) => {
 const payOrder = (order, paymentResult) => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.ORDER_PAY_REQUEST, payload: paymentResult });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data } = await axios.put("/api/orders/" + order._id + "/pay", paymentResult, {
             headers:
                 { Authorization: userInfo.token }
@@ -76,7 +76,7 @@ const payOrder = (order, paymentResult) => async (dispatch, getState) => {
 const deleteOrder = (orderId) => async (dispatch, getState) => {
     try {
         dispatch({ type: actions.ORDER_DELETE_REQUEST, payload: orderId });
-        const { userSignin: { userInfo } } = getState();
+        const { userLogin: { userInfo } } = getState();
         const { data } = await axios.delete("/api/orders/" + orderId, {
             headers:
                 { Authorization: userInfo.token }
