@@ -4,8 +4,9 @@ import axios from 'axios';
 const listProducts = (category = '', searchKeyword = '', sortOrder = '') => async (dispatch) => {
     try {
         dispatch({ type: actions.PRODUCT_LIST_REQUEST });
-        const { data } = await axios.get("/api/products/?category=" + category +
+        const response = await axios.get("/api/products/?category=" + category +
             "&searchKeyword=" + searchKeyword + "&sortOrder=" + sortOrder);
+        const { data } = response;
         dispatch({ type: actions.PRODUCT_LIST_SUCCESS, payload: data });
     }
     catch (error) {
